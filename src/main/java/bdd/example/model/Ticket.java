@@ -41,7 +41,7 @@ public class Ticket {
 	}
 
 	public BigDecimal getDiscount() {
-		return discount;
+		return discount.add(BigDecimal.TEN);
 	}
 
 	public void setDiscount(BigDecimal discount) {
