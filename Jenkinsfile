@@ -11,18 +11,21 @@ node {
     sh "mvn -v"
     sh "java -version"
 
-    stage 'test'
-    sh "mvn test"
-
+    try{
+        stage 'test'
+        sh "mvn test"
+    }finally{
+        stage 'report'
+        step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+        step([$class: 'CukedoctorPublisher', featuresDir: '', format: 'HTML', hideFeaturesSection: false, hideScenarioKeyword: false, hideStepTime: false, hideSummary: false, hideTags: false, numbered: true, sectAnchors: true, title: 'Living Documentation', toc: 'RIGHT'])
+    
+    }
     // stage 'package'
     // sh "mvn package"
 
     // stage 'preview'
     // sh 'make deploy-default'
 
-    stage 'report'
-    step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-    step([$class: 'CukedoctorPublisher', featuresDir: '', format: 'HTML', hideFeaturesSection: false, hideScenarioKeyword: false, hideStepTime: false, hideSummary: false, hideTags: false, numbered: true, sectAnchors: true, title: 'Living Documentation', toc: 'RIGHT'])
     // stage 'Artifact'
     // step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
 
