@@ -1,3 +1,4 @@
+
 Feature: Ticket purchase
 
 Scenario: Ticket purchase with discount for regular customers
