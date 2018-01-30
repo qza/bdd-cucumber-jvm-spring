@@ -1,0 +1,25 @@
+#language: id
+Fitur: Ticket purchase
+
+Skenario: Ticket purchase with discount for regular customers
+
+    Dengan tickets can be purchased
+
+     Ketika "regular" customer makes request to purchase the ticket
+      Dan request is within the acceptable discount period defined by the policy
+
+     Maka price of the ticket should be reduced for amount defined by the policy
+      Dan payment transaction should be initiated with payment provider
+      Dan customer should be notified about the "purchase"
+
+
+Skenario: Ticket purchase without discount for regular customers
+
+    Dengan tickets can be purchased
+
+     Ketika "regular" customer makes request to purchase the ticket
+      Dan discount period defined by the policy has expired
+	
+     Maka ticket should have regular price
+      Dan payment transaction should be initiated with payment provider
+      Dan customer should be notified about the "purchase"

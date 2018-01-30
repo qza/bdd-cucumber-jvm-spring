@@ -1,0 +1,39 @@
+"id": {
+    "and": [
+      "* ",
+      "Dan "
+    ],
+    "background": [
+      "Dasar"
+    ],
+    "but": [
+      "* ",
+      "Tapi "
+    ],
+    "examples": [
+      "Contoh"
+    ],
+    "feature": [
+      "Fitur"
+    ],
+    "given": [
+      "* ",
+      "Dengan "
+    ],
+    "name": "Indonesian",
+    "native": "Bahasa Indonesia",
+    "scenario": [
+      "Skenario"
+    ],
+    "scenarioOutline": [
+      "Skenario konsep"
+    ],
+    "then": [
+      "* ",
+      "Maka "
+    ],
+    "when": [
+      "* ",
+      "Ketika "
+    ]
+},
